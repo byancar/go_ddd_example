@@ -1,0 +1,9 @@
+version: '2'
+sql:
+  - engine: "postgresql"
+    schema: "internal/infrastructure/migrations"
+    queries: "internal/infrastructure/persistence/sqlc/query.sql"
+    gen:
+      go:
+        package: "users"
+        out: "internal/infrastructure/persistence/sqlc"

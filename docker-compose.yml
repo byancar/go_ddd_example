@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+  postgres:
+    container_name: users_db_container
+    image: postgres
+    command: postgres -c listen_addresses='*'
+    environment:
+      POSTGRES_USER: users
+      POSTGRES_PASSWORD: users
+      POSTGRES_DB: users_db
+      PGDATA: /data/postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped

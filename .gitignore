@@ -1,0 +1,43 @@
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Compiled Output
+*.out
+*.exe
+
+# Ignored directories
+bin/
+pkg/
+vendor/
+
+# Dependency directories
+.vgo/
+.vscode/
+.idea/
+.cache/
+# Add more directories here if needed
+
+# OS-specific
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+
+# Go specific
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Temp files
+*.log
+*.swp
+go_ddd_example

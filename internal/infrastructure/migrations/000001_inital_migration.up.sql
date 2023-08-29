@@ -1,13 +1,13 @@
-CREATE TABLE user (
+CREATE TABLE users (
     id       SERIAL PRIMARY KEY,
     username TEXT,
     email    TEXT
 );
 
 
-CREATE TABLE address (
+CREATE TABLE addresses (
     id          SERIAL PRIMARY KEY,
-    user_id     BIGINT REFERENCES user (id),
+    user_id     BIGINT REFERENCES users (id),
     street      TEXT,
     city        TEXT,
     state       TEXT,

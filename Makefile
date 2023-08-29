@@ -6,7 +6,7 @@ MAIN_FILE := cmd/main.go
 GO_FLAGS := -race
 SQLC_CMD = sqlc
 MIGRATE_CMD = migrate
-DB_URL = "postgresql://postgres:123123@localhost:5342/database?sslmode=disable"
+DB_URL = "postgresql://users:users@localhost:5432/users_db?sslmode=disable"
 MIGRATIONS_DIR = internal/infrastructure/migrations
 
 # Comandos
@@ -25,7 +25,6 @@ clean:
 	@echo "Cleaning..."
 	@rm -f $(APP_NAME)
 
-
 .PHONY: generate
 generate:
 	$(SQLC_CMD) generate
@@ -39,4 +38,14 @@ apply-migrations:
 	$(MIGRATE_CMD) -database $(DB_URL) -path $(MIGRATIONS_DIR) up
 
 install-migrate:
-	go install github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+	go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+
+install-sqlc:
+	go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+
+#Docker
+start-db:
+	docker-compose up -d
+
+docker-clear:
+		docker stop $(docker ps -a -q); docker container prune ; docker image prune ; docker volume prune;
