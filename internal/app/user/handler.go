@@ -1,6 +1,9 @@
 package user
 
-import "github.com/gin-gonic/gin"
+import (
+	"fmt"
+	"github.com/gin-gonic/gin"
+)
 
 type UserHandler struct {
 	userService UserService
@@ -13,5 +16,5 @@ func NewUserHandler(userService UserService) *UserHandler {
 }
 
 func (h *UserHandler) Create(c *gin.Context) {
-
+	fmt.Print(c)
 }
