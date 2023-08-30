@@ -2,6 +2,6 @@ database:
   driver: "postgres"
   host: "localhost"
   port: 5432
-  username: "postgres"
-  password: "123123"
-  database: "go_ddd_example"
+  username: "users"
+  password: "users"
+  database: "users_db"

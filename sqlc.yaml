@@ -5,5 +5,6 @@ sql:
     queries: "internal/infrastructure/persistence/sqlc/query.sql"
     gen:
       go:
+        emit_interface: true
         package: "users"
         out: "internal/infrastructure/persistence/sqlc"

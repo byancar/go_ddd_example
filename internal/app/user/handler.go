@@ -12,6 +12,6 @@ func NewUserHandler(userService UserService) *UserHandler {
 	}
 }
 
-func (h *UserHandler) create(c *gin.Context) {
+func (h *UserHandler) Create(c *gin.Context) {
 
 }
